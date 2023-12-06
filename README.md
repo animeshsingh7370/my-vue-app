@@ -8,4 +8,6 @@ API used : [Weather API](https://www.weatherapi.com/) (Free Version)
 
 Any open source contribution is welcomed . This can be a ideal start to open source contribution for any beginner and surely it will be a great learning opportunity for me.
 
-![1700366235187](image/readme/1700366235187.png)![1700366320167](image/readme/1700366320167.png)
+![1701884318672](image/README/1701884318672.png)
+
+![1701884325771](image/README/1701884325771.png)
