@@ -1,24 +1,11 @@
-# my-vue-app
+# Vue Weather App
 
-## Project setup
-```
-npm install
-```
+A Weather Application  which tells you temperature, humidity, pressure and wind speed. This is built completely on Vue and it is using a custom golang API which itself calling Weather API .
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Input Parameters: Name of the City or place.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+API used : [Weather API](https://www.weatherapi.com/) (Free Version)
 
-### Lints and fixes files
-```
-npm run lint
-```
+Any open source contribution is welcomed . This can be a ideal start to open source contribution for any beginner and surely it will be a great learning opportunity for me.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![1700366235187](image/readme/1700366235187.png)![1700366320167](image/readme/1700366320167.png)
