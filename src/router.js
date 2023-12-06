@@ -3,8 +3,8 @@ import HomePage from "./components/HomePage.vue";
 import WeatherReport from "./components/WeatherReport.vue";
 
 const routes = [
-  { path: "/", component: HomePage },
-  { path: "/weatherdetails", component: WeatherReport },
+  { path: "/", name:'HomePage',component: HomePage },
+  { path: "/weatherdetails", name:'WeatherReport', component: WeatherReport },
 ];
 
 const router = createRouter({

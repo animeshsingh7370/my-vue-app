@@ -24,7 +24,7 @@ body.night-mode {
   /* color: #fff; */
 }
 .container {
-  background-image: url("../assets/nature.jpg");
+  background-image: url("/public/nature.jpg");
   background-size: cover;
   padding: 20px;
   box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.1);
