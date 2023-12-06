@@ -24,7 +24,7 @@
 
     <button id="toggleButton" @click="changeTheme()">
       <div id="image-container">
-        <img id="toggleImage" src="/night-mode.png" alt="Moon Icon" />
+        <img id="toggleImage" :src="themePic" alt="Moon Icon" />
       </div>
     </button>
   </div>
@@ -34,8 +34,16 @@
 import axios from "axios";
 export default {
   data() {
+    var element = document.body;
+
+    var theme = element.classList.contains("night-mode")
+      ? "day-sun.png"
+      : "night-mode.png";
+
     return {
       inputValue: "",
+      themePic: theme,
+      
     };
   },
   methods: {
@@ -50,13 +58,10 @@ export default {
         location: cityName,
       };
 
-
-
       this.$router.push({
         path: "/weatherdetails",
         query: { locationName: locationData.location },
       });
-
     },
 
     getLocation() {
@@ -91,14 +96,18 @@ export default {
     changeTheme() {
       var element = document.body;
       element.classList.toggle("night-mode");
-
-      var image = document.getElementById("toggleImage");
-      if (image.src.endsWith("night-mode.png")) {
-        image.src = "src/assets/day-mode.png";
-      } else {
-        image.src = "src/assets/night-mode.png";
-      }
+      this.themePic = element.classList.contains("night-mode")
+        ? "day-sun.png"
+        : "night-mode.png";
     },
+  },
+    beforeRouteLeave(to, from, next) {
+    if (this.inputValue == "") {
+      next(false);
+    } else {
+      next();
+    }
+    
   },
 };
 </script>
