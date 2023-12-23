@@ -3,7 +3,7 @@
     <div class="container">
       <h1 id="title">Weather App</h1>
       <div class="app-image">
-        <img src="/rainy-day.png" alt="rainy-day" />
+        <img src="@/assets/rainy-day.png" alt="rainy-day" />
       </div>
       <div class="input-group">
         <input
@@ -13,7 +13,7 @@
           v-model="inputValue"
         />
         <button id="location" @click="getLocation()">
-          <img src="/location.png" alt="Location Icon" />
+          <img src="@/assets/location.png" alt="Location Icon" />
         </button>
       </div>
       <button id="info" type="button" @click="getWeatherReport()">
@@ -22,11 +22,7 @@
       <h3 id="weatherData"></h3>
     </div>
 
-    <button id="toggleButton" @click="changeTheme()">
-      <div id="image-container">
-        <img id="toggleImage" :src="themePic" alt="Moon Icon" />
-      </div>
-    </button>
+
   </div>
 </template>
 
@@ -34,15 +30,11 @@
 import axios from "axios";
 export default {
   data() {
-    var element = document.body;
 
-    var theme = element.classList.contains("night-mode")
-      ? "day-sun.png"
-      : "night-mode.png";
 
     return {
       inputValue: "",
-      themePic: theme,
+     
       
     };
   },
@@ -78,7 +70,7 @@ export default {
           axios
             .post("/api/sendData", data)
             .then((response) => {
-              // Handle the response from the Go backend
+              
 
               var cityName = response.data.location.name;
 
@@ -93,13 +85,7 @@ export default {
       }
     },
 
-    changeTheme() {
-      var element = document.body;
-      element.classList.toggle("night-mode");
-      this.themePic = element.classList.contains("night-mode")
-        ? "day-sun.png"
-        : "night-mode.png";
-    },
+
   },
     beforeRouteLeave(to, from, next) {
     if (this.inputValue == "") {

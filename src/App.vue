@@ -18,6 +18,6 @@ export default {
 </script>
 
 <style>
-@import "../src/assets/styles.css";
+@import "@/assets/styles.css";
 
 </style>
