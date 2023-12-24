@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Graduate&family=Josefin+Sans&family=Roboto&display=swap');
+
+
 body {
   transition: background 0.6s ease;
   margin: 0;
@@ -18,16 +21,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.night-mode {
-  background: #000000;
+.temp-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  --toggle-width: 5rem;
+  --toggle-height: 2rem;
+  --toggle-font-size: 2rem;
+  
+  --toggle-duration: 300ms;
 
-  /* color: #fff; */
 }
-#toggleButton.night-mode-button {
-  background: white;
 
-  /* color: #fff; */
-}
 .container {
   background-image: url("@/assets/nature.jpg");
   background-size: cover;
@@ -42,8 +47,6 @@ body.night-mode {
 }
 
 .weather-container {
-  /* background-image: url("../icons/background_2.jpg"); */
-  /* background-image: url("../icons/road.jpg"); */
   background: linear-gradient(to top, #12100e, #2b4162, #12100e);
 
   background-size: cover;
@@ -55,16 +58,20 @@ body.night-mode {
   align-items: center;
   border-radius: 10px;
   height: 80vh;
-  width: 70vw;
+  width: 60vw;
 }
 
-#title {
+.title {
   margin-bottom: 20px;
   color: rgb(255, 219, 219);
   font-size: 50px;
 }
 
 #date {
+  /* font-family: 'Bebas Neue', sans-serif; */
+  /* font-family: 'Graduate', serif; */
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: white;
   text-align: center;
@@ -72,17 +79,14 @@ body.night-mode {
   margin-top: 0px;
 }
 
-#locationContainer {
-  text-align: center;
-}
 
-/* #location-logo {
-  width: 45px;
-  margin-right: 20px;
-} */
 #weather-location {
-  font-family: "Mukta", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Graduate', serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  /* font-family: 'Roboto', sans-serif; */
   font-size: 50px;
+
   color: #c4bfc4;
 
   margin-bottom: 0px;
@@ -91,10 +95,11 @@ body.night-mode {
 
 .input-group {
   display: flex;
+  flex-direction: row;
   margin-bottom: 20px;
 }
 
-.input-group input[type="text"] {
+input {
   padding: 10px;
 
   border-top: 3px solid #0a0a0a;
@@ -144,158 +149,20 @@ button:hover {
   background-color: #0056b3;
 }
 
-#toggleButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-#toggleButton img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background-color: transparent;
-  /* filter:brightness(5) invert(1); */
-}
-
-.toggle {
-  position: absolute;
-  display: block;
-  top: 20px;
-  right: 20px;
-  width: 100px;
-  height: 40px;
-  padding: 3px;
-  margin: auto;
-  border-radius: 50px;
-  cursor: pointer;
-}
-.toggle-input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-.toggle-label {
-  position: relative;
-  display: block;
-  height: inherit;
-  font-size: 12px;
-  background: whitesmoke;
-  border-radius: inherit;
-
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12),
-    inset 0 0 3px rgba(0, 0, 0, 0.15);
-}
-.toggle-label:before,
-.toggle-label:after {
-  position: absolute;
-  top: 50%;
-  color: black;
-  margin-top: -0.5em;
-  line-height: 1;
-}
-.toggle-label:before {
-  content: attr(data-off);
-  right: 11px;
-  color: black;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
-  font-size: 30px;
-  /* font-weight: bold; */
-}
-.toggle-label:after {
-  content: attr(data-on);
-  left: 11px;
-  color: black;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  font-size: 30px;
-  /* font-weight: bold; */
-}
-.toggle-input:checked ~ .toggle-label {
-  background: whitesmoke;
-}
-.toggle-input:checked ~ .toggle-label:before {
-  opacity: 0;
-}
-.toggle-input:checked ~ .toggle-label:after {
-  opacity: 1;
-}
-.toggle-handle {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 38px;
-  height: 38px;
-  background: #4499e9;
-  border-radius: 50%;
-}
-.toggle-handle:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -6px 0 0 -6px;
-  width: 16px;
-  height: 16px;
-}
-.toggle-input:checked ~ .toggle-handle {
-  left: 64px;
-  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Transition*/
-.toggle-label,
-.toggle-handle {
-  -webkit-transition: All 0.3s ease;
-  -moz-transition: All 0.3s ease;
-  -o-transition: All 0.3s ease;
-  transition: All 0.3s ease;
-}
-
-#weatherContainer {
-  text-align: center;
-}
-
 #temperature {
   color: #efbaa4;
   font-size: 100px;
   font-weight: lighter;
   margin-bottom: 20px;
-
-  /* margin-right: 150px; */
 }
-#divide-line {
-  color: white;
-  font-size: 30px;
+
+
+sub{
+  font-size: 50px;
   font-weight: lighter;
-  margin-bottom: 20px;
+  color:white;
 }
-#condition {
-  color: white;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 20px;
 
-  margin-right: 150px;
-}
-.inline {
-  display: inline-block;
-}
-.inline-location {
-  display: inline-block;
-}
-/* .inline-info {
-  display: inline-block;
-} */
-
-.condition-image {
-  width: 128px;
-
-  margin-right: 20px;
-}
 
 .additional-info {
   display: flex;
@@ -308,27 +175,10 @@ button:hover {
   width: 60vw;
   margin-top: 40px;
 }
-
-.additional-info > * {
-  flex: 1 1 auto;
-  min-width: 0;
+p{
+  text-align: center;
 }
 
-.additional-info img {
-  max-width: 40%;
-  height: auto;
-}
-
-.feels-like,
-.humidity,
-.pressure,
-.wind-speed {
-  margin-right: 10px;
-  margin-left: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
 #feelsLikeTemp,
 #humidity,
 #pressure,
@@ -337,9 +187,9 @@ button:hover {
   font-size: 30px;
 }
 
-.feels-like-text,
-.humidity-text,
-.pressure-text,
+.feelsLikeText,
+.humidityText,
+.pressureText,
 .wind-speed-text {
   margin-right: 10px;
   margin-left: 10px;
@@ -350,3 +200,4 @@ button:hover {
   font-size: 25px;
   font-weight: lighter;
 }
+

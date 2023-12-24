@@ -1,29 +1,25 @@
 <template>
-  <div>
     <div class="container">
-      <h1 id="title">Weather App</h1>
-      <div class="app-image">
-        <img src="@/assets/rainy-day.png" alt="rainy-day" />
-      </div>
+      <h1 class="title">Weather App</h1>
+     
+      <img class="app-image" src="@/assets/rainy-day.png" alt="rainy-day" />
+
       <div class="input-group">
         <input
           type="text"
           id="city"
           placeholder="Enter City Name"
-          v-model="inputValue"
-        />
-        <button id="location" @click="getLocation()">
+          v-model="inputValue"/>
+        
+        <button  @click="getLocation()">
           <img src="@/assets/location.png" alt="Location Icon" />
         </button>
       </div>
-      <button id="info" type="button" @click="getWeatherReport()">
+      <button type="button" @click="getWeatherReport()">
         Get Weather Report
       </button>
       <h3 id="weatherData"></h3>
     </div>
-
-
-  </div>
 </template>
 
 <script>
